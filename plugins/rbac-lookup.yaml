@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha1
+kind: Plugin
+metadata:
+  name: rbac-lookup
+spec:
+  version: v0.1.0
+  shortDescription: Reverse lookup for RBAC.
+  description: |
+    Lookup role bindings and cluster role bindings by subject names
+  platforms:
+  - uri: https://github.com/reactiveops/rbac-lookup/releases/download/v0.1.0/rbac-lookup_0.1.0_Darwin_x86_64.tar.gz
+    sha256: 802c968124be1b9f7b4b691b608aeb66d4b60a79ca6668c04c850c1ad003c42c
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+  - uri: https://github.com/reactiveops/rbac-lookup/releases/download/v0.1.0/rbac-lookup_0.1.0_Linux_x86_64.tar.gz
+    sha256: 605a95015fd2c07d866a3eee7fe7d3e9d299426335ce740fca52fe4c8c231484
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
